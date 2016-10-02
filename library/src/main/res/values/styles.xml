@@ -1,0 +1,18 @@
+<resources>
+
+    <style name="npc_Theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="actionButtonStyle">@style/ActionButton</item>
+    </style>
+
+    <style name="ActionButton" parent="@style/Widget.AppCompat.ActionButton">
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="CropOption">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>

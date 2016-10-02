@@ -1,0 +1,12 @@
+<manifest package="com.jaychang.npc"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity
+            android:name=".CropperActivity"
+            android:configChanges="keyboardHidden|screenSize|orientation"
+            android:theme="@style/npc_Theme"
+            />
+    </application>
+
+</manifest>
