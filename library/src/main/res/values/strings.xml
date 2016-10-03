@@ -1,8 +1,8 @@
 <resources>
-    <string name="original">Original</string>
-    <string name="wide">Wide</string>
-    <string name="square">Square</string>
-    <string name="rotate">Rotate</string>
-    <string name="done">Done</string>
-    <string name="cancel">Cancel</string>
+    <string name="npc_original">Original</string>
+    <string name="npc_wide">Wide</string>
+    <string name="npc_square">Square</string>
+    <string name="npc_rotate">Rotate</string>
+    <string name="npc_done">Done</string>
+    <string name="npc_cancel">Cancel</string>
 </resources>

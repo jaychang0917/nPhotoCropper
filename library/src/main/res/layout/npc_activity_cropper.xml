@@ -33,39 +33,39 @@
 
         <TextView
             android:id="@+id/originalOptionView"
-            style="@style/CropOption"
+            style="@style/npc_CropOption"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/state_original"
-            android:text="@string/original" />
+            android:drawableTop="@drawable/npc_state_original"
+            android:text="@string/npc_original" />
 
         <TextView
             android:id="@+id/wideOptionView"
-            style="@style/CropOption"
+            style="@style/npc_CropOption"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/state_wide"
-            android:text="@string/wide" />
+            android:drawableTop="@drawable/npc_state_wide"
+            android:text="@string/npc_wide" />
 
         <TextView
             android:id="@+id/squareOptionView"
-            style="@style/CropOption"
+            style="@style/npc_CropOption"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/state_square"
-            android:text="@string/square" />
+            android:drawableTop="@drawable/npc_state_square"
+            android:text="@string/npc_square" />
 
         <TextView
             android:id="@+id/rotateOptionView"
-            style="@style/CropOption"
+            style="@style/npc_CropOption"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableTop="@drawable/ic_rotate"
-            android:text="@string/rotate" />
+            android:text="@string/npc_rotate" />
 
     </LinearLayout>
 
