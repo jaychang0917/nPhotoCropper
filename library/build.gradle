@@ -26,5 +26,5 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':ucrop')
+    compile 'com.github.jaychang0917:uCrop:2.2.0'
 }
