@@ -17,7 +17,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-  private Uri croppedPhoto;
   private ImageView imageView;
 
   @Override
@@ -28,14 +27,12 @@ public class MainActivity extends AppCompatActivity {
     Button button = (Button) findViewById(R.id.pickPhoto);
     imageView = (ImageView) findViewById(R.id.imageView);
 
-
     button.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
         pickPhotos();
       }
     });
-
   }
 
   private void pickPhotos() {
@@ -49,14 +46,6 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void cropPhoto(Uri photo) {
-//    UCrop.Options options = new UCrop.Options();
-//    options.setToolbarWidgetColor(ContextCompat.getColor(this, R.color.colorPrimary));
-//    options.setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary));
-//    options.setHideBottomControls(true);
-////
-//    UCrop.of(photo, Uri.fromFile(new File(getCacheDir(), "crop.png")))
-//      .withOptions(options)
-//      .start(this);
     NPhotoCropper.from(photo)
       .start(this);
   }
