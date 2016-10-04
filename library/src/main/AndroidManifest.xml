@@ -1,7 +1,7 @@
 <manifest package="com.jaychang.npc"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <application android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+    <application>
         <activity
             android:name=".CropperActivity"
             android:configChanges="keyboardHidden|screenSize|orientation"
