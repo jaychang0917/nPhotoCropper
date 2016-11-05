@@ -15,6 +15,12 @@ import com.jaychang.npp.Photo;
 
 import java.util.List;
 
+import rx.Observable;
+import rx.functions.Action1;
+import rx.functions.Func1;
+
+import static android.app.Activity.RESULT_OK;
+
 public class MainActivity extends AppCompatActivity {
 
   private ImageView imageView;
@@ -36,32 +42,29 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void pickPhotos() {
-    NPhotoPicker.create()
+    NPhotoPicker.with(this)
       .toolbarColor(R.color.colorPrimary)
       .statusBarColor(R.color.colorPrimary)
       .selectedBorderColor(R.color.colorPrimary)
       .limit(6)
-      .multiMode()
-      .start(this);
+      .pickSinglePhoto()
+      .flatMap(new Func1<Uri, Observable<Uri>>() {
+        @Override
+        public Observable<Uri> call(Uri uri) {
+          return cropPhoto(uri);
+        }
+      })
+      .subscribe(new Action1<Uri>() {
+        @Override
+        public void call(Uri uri) {
+          Glide.with(MainActivity.this).load(uri).into(imageView);
+        }
+      });
   }
 
-  private void cropPhoto(Uri photo) {
-    NPhotoCropper.from(photo)
-      .start(this);
+  private Observable<Uri> cropPhoto(Uri source) {
+    return NPhotoCropper.with(this, source)
+      .crop();
   }
 
-  @Override
-  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    if (requestCode == NPhotoPicker.REQUEST_PHOTO_PICKER && resultCode == RESULT_OK) {
-      List<Photo> photos = NPhotoPicker.getPickedPhotos(data);
-      for (Photo photo : photos) {
-        cropPhoto(photo.getUri());
-      }
-    }
-
-    if (requestCode == NPhotoCropper.REQUEST_PHOTO_CROP && resultCode == RESULT_OK) {
-      Uri resultUri = NPhotoCropper.getCroppedPhoto(data);
-      Glide.with(this).load(resultUri).into(imageView);
-    }
-  }
 }

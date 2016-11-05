@@ -163,15 +163,10 @@ public class CropperActivity extends AppCompatActivity {
   }
 
   private void setResultUri(Uri uri, float resultAspectRatio, int imageWidth, int imageHeight) {
-    setResult(RESULT_OK, new Intent()
-      .putExtra(UCrop.EXTRA_OUTPUT_URI, uri)
-      .putExtra(UCrop.EXTRA_OUTPUT_CROP_ASPECT_RATIO, resultAspectRatio)
-      .putExtra(UCrop.EXTRA_OUTPUT_IMAGE_WIDTH, imageWidth)
-      .putExtra(UCrop.EXTRA_OUTPUT_IMAGE_HEIGHT, imageHeight)
-    );
+    NPhotoCropper.getInstance().onPhotoCropped(uri);
   }
 
   private void setResultError(Throwable throwable) {
-    setResult(UCrop.RESULT_ERROR, new Intent().putExtra(UCrop.EXTRA_ERROR, throwable));
+    NPhotoCropper.getInstance().onPhotoCropError(throwable);
   }
 }
