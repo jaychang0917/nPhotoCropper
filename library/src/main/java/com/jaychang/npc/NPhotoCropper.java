@@ -8,6 +8,9 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 
+import java.io.File;
+import java.net.URI;
+
 import rx.Observable;
 import rx.subjects.PublishSubject;
 
@@ -50,14 +53,16 @@ public class NPhotoCropper {
 
   void onPhotoCropped(Uri uri) {
     if (photoEmitter != null) {
-      photoEmitter.onNext(uri);
+      Uri copy = Uri.fromFile(new File(uri.getPath()));
+      photoEmitter.onNext(copy);
       photoEmitter.onCompleted();
     }
   }
 
   void onPhotoCropError(Throwable throwable) {
     if (photoEmitter != null) {
-      photoEmitter.onError(throwable);
+      Throwable copy = new Throwable(throwable);
+      photoEmitter.onError(copy);
     }
   }
 
