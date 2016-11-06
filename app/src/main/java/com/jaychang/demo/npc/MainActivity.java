@@ -1,6 +1,5 @@
 package com.jaychang.demo.npc;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,15 +10,10 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.jaychang.npc.NPhotoCropper;
 import com.jaychang.npp.NPhotoPicker;
-import com.jaychang.npp.Photo;
-
-import java.util.List;
 
 import rx.Observable;
 import rx.functions.Action1;
 import rx.functions.Func1;
-
-import static android.app.Activity.RESULT_OK;
 
 public class MainActivity extends AppCompatActivity {
 
